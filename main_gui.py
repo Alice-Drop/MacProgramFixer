@@ -28,7 +28,7 @@ def fix_damaged_app():
     messagebox.showinfo("提示", "请选择需要修复的应用程序 (.app)")
     app_path = filedialog.askopenfilename(
         title="选择要修复的 .app",
-        filetypes=[("应用程序", "*.app"), ("所有文件", "*")],
+        filetypes=[("所有文件", "*"),("应用程序", "*.app")],
         initialdir="/Applications/"
     )
     if not app_path:
