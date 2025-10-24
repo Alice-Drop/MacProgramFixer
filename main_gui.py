@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 
 PROJECT_NAME = "Mac软件无法运行修复工具 - by AliceDrop"
+PROJECT_HREF = "https://github.com/Alice-Drop/MacProgramFixer"
 VERSION = "v0.2"
 
 class Commands:
@@ -55,6 +56,9 @@ def check_attr():
 def fix_undefined_developer():
     messagebox.showinfo("提示", "此问题是签名问题，通过 “1.开启任何来源” 即可解决。\n如仍无法打开，请尝试右键→打开。")
 
+def open_project_page():
+    os.system("open " + PROJECT_HREF)
+
 def main():
     root = tk.Tk()
     root.title(PROJECT_NAME)
@@ -71,7 +75,7 @@ def main():
     tk.Button(root, text="检查文件附加属性", width=40, command=check_attr).pack(pady=10)
 
     tk.Label(root, text="使用须知：本工具仅用于修复合法软件在 Mac 上的运行限制。\n请勿用于绕过安全机制或运行不可信软件。", wraplength=420, justify="center", fg="gray").pack(pady=20)
-
+    tk.Button(root, text="Github",underline=True, command=open_project_page).pack()
     root.mainloop()
 
     # todo: 未来加入自动检查，一键修复。
